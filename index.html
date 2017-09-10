@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="depoApp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <!--Jquery CDN-->
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+  <!--Bootstrap 3.3.7-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <!--Bootstrap JS 3.3.7-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+      <!--Custom CSS-->
+      <link rel="stylesheet" href="./CSS/style.css">
+
+      <!--Google Font-->
+      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+      <!--Angular 1.5.7 CDN-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+
+      <!--Angular UI Router 0.4.2-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row col-md-12" id="header">
+      <h1 id="companyHeader">
+        <a ui-sref="homeView"><img id="logo" src="https://systemicjusticeblog.files.wordpress.com/2015/10/courthouse.jpg">Company name</a>
+      </h1>
+      <ul id="navBar">
+        <span id="demoStyle">DEMO</span>
+        <li id="navLink"><a ui-sref="homeView">Home</a></li>
+        <li id="navLink"><a ui-sref="booking">Booking</a></li>
+        <li id="navLink"><a ui-sref="workOrder">Work Order</a></li>
+      </ul>
+    </div>
+    <div ui-view autoscroll="true"></div>
+  </div>
+  <script src="./app.js"></script>
+  <script src="./controller/bookingController.js"></script>
+  <script src="./controller/ordersController.js"></script>
+  <script src="./services/userService.js"></script>
+
+
+</body>
+
+</html>

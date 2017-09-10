@@ -1,0 +1,198 @@
+<div class="text-center" id="bookingHeader">
+  <h1>Deposition Booking</h1>
+</div>
+<div class="row well">
+  <div class="row col-md-12 text-center">
+    <h3>Court Reporter Information</h3>
+  </div>
+  <div class="row col-md-12">
+    <div class="form-group">
+      <label for="reporterName">Name</label>
+      <select id="reporterNameList" ng-model="reporterName" ng-change="getCertNumber()">
+        <option>Eleven</option>
+        <option>Nancy Drew</option>
+        <option>Kevin Malone</option>
+        <option>Meredith Palmer</option>
+        <option>Pam Beasley</option>
+        <option>Robin Lee</option>
+        <option>James Smith</option>
+        <option>Kelly Woods</option>
+      </select>
+      <input type="text" id="reporterName" class="pull-right form-control" placeholder="Enter New Name" ng-model="reporterName">
+    </div>
+    <div class="form-group">
+      <label for="certNumber">Certification Number</label>
+      <input type="text" id="certNumber" class="pull-right form-control" placeholder="Certification Number" ng-model="certNumber">
+    </div>
+  </div>
+</div>
+<div class="row well">
+  <div class="row col-md-12 text-center">
+    <h3>Case Information</h3>
+  </div>
+  <div class="row col-md-12">
+    <div class="form-group">
+      <label for="caseName">Case Name</label>
+      <select id="caseNameList" ng-model="caseName">
+              <option>Upside Down vs. Hawkins National Laboratory</option>
+              <option>Bookstore vs. Movie Production</option>
+              <option>Michael Scott Paper Company vs. Dunder-Mifflin</option>
+              <option>Simpson vs. Springfield</option>
+              <option>Stone vs. Brick</option>
+              <option>Frank vs. State</option>
+            </select>
+      <input type="text" id="caseName" class="pull-right form-control" placeholder="Enter New Case" ng-model="caseName">
+    </div>
+    <div class="form-group">
+      <label for="depoLocation">Deposition Location</label>
+      <input type="text" id="depoLocation" class="pull-right form-control" placeholder="Deposition Location" ng-model="depoLocation">
+    </div>
+    <div class="form-group">
+      <label for="depoDateTime">Deposition Date and Time</label>
+      <input type="date" id="depoDateTime" class="pull-right form-control" ng-model="depoDateTime">
+    </div>
+  </div>
+</div>
+<div class="row well">
+  <div class="row col-md-12 text-center">
+    <h3>Law Firm/Attorney Information</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Law Firm Information</h4>
+      <div class="form-group">
+        <label for="firmName">Name</label>
+        <select id="lawFirmList" ng-model="firmName" ng-change="getLawFirmInfo()">
+              <option>Mike, Lucas, and Dustin</option>
+              <option>Fiction Law Group</option>
+              <option>Creed Law Group</option>
+              <option>Vance, Schrute, and Martin</option>
+              <option>Moe Law Group</option>
+              <option>Brooks, Daniels, and Loeb</option>
+              <option>Dale Law Group</option>
+            </select>
+        <input type="text" id="firmName" class="pull-right form-control" placeholder="Enter New Firm" ng-model="firmName">
+      </div>
+      <div class="form-group">
+        <label for="firmAddress">Address</label>
+        <input type="text" id="firmAddress" class="pull-right form-control" placeholder="Address" ng-model="firmAddress">
+      </div>
+      <div class="form-group">
+        <label for="firmPhone">Phone</label>
+        <input type="text" id="firmPhone" class="pull-right form-control" placeholder="Phone" ng-model="firmPhone">
+      </div>
+      <div class="form-group">
+        <label for="firmEmail">Email</label>
+        <input type="text" id="firmEmail" class="pull-right form-control" placeholder="Email" ng-model="firmEmail">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Attorney's Information</h4>
+      <div class="form-group">
+        <label for="attorneyName">Name</label>
+        <select id="attorneyNameList" ng-model="attorneyName" ng-change="getAttorneyInfo()">
+              <option>Will Byers</option>
+              <option>Frank Hardy</option>
+              <option>Monty Burns</option>
+              <option>Darryl Philbin</option>
+              <option>Andy Bernard</option>
+              <option>Kelly Kapoor</option>
+              <option>Stan Brooks</option>
+              <option>Bob Jones</option>
+            </select>
+        <input type="text" id="attorneyName" class="pull-right form-control" placeholder="Enter New Name" ng-model="attorneyName">
+      </div>
+      <div class="form-group">
+        <label for="attorneyEmail">Email</label>
+        <input type="text" id="attorneyEmail" class="pull-right form-control" placeholder="Email" ng-model="attorneyEmail">
+      </div>
+      <div class="form-group">
+        <label for="attorneyPhone">Phone</label>
+        <input type="text" id="attorneyPhone" class="pull-right form-control" placeholder="Phone" ng-model="attorneyPhone">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row well">
+  <div class="row col-md-12 text-center">
+    <h3>Deposition Order Information</h3>
+  </div>
+  <div class="row col-md-6" id="speedTab">
+    <label for="titleSpeed" id="headerTab">Speed</label>
+    <label class="radio-inline pull-right" id="speedNormal">
+        <input type="radio" name="speedRadio" value="Normal" ng-model="speed">Normal</label>
+    <label class="radio-inline pull-right" id="speedRushEx">
+        <input type="radio" name="speedRadio" value="Rush" ng-model="speed">Rush</label>
+    <label class="radio-inline pull-right" id="speedRushEx">
+        <input type="radio" name="speedRadio" value="Expedited" ng-model="speed">Expedited</label>
+  </div>
+  <div class="row col-md-6" id="formatTab">
+    <label for="titleForamt" id="headerTab">Format</label>
+    <label class="checkbox-inline pull-right" id="formatIndex">
+    <label class="checkbox-inline pull-right" id="formatSelectAll">
+        <input type="checkbox" name="selectAllCheck" ng-click="formatSelectAll()" ng-model="formatSelectAllValue">Select All</label>
+    <input type="checkbox" name="foramtCheck" ng-model="index">Index</label>
+    <label class="checkbox-inline pull-right" id="formatFullCondensed">
+        <input type="checkbox" name="formatCheck" ng-model="condensed">Condensed</label>
+    <label class="checkbox-inline pull-right" id="formatFullCondensed">
+        <input type="checkbox" name="foramtCheck" ng-model="full">Full</label>
+  </div>
+  <div class="row col-md-6" id="timestampTab">
+    <label for="titleTimeStamp" id="headerTab">Timestamped</label>
+    <label class="radio-inline pull-right" id="timeNo">
+        <input type="radio" name="timestampRadio" value="No" ng-model="timeStamp">No</label>
+    <label class="radio-inline pull-right" id="timeYes">
+        <input type="radio" name="timestampRadio" value="Yes" ng-model="timeStamp">Yes</label>
+  </div>
+  <div class="row col-md-6" id="deliveryTab">
+    <label for="titleDelivery" id="headerTab">Delivery Options</label>
+    <label class="checkbox-inline pull-right" id="deliverySelectAll">
+        <input type="checkbox" name="selectAllCheck" ng-click="deliverySelectAll()" ng-model="deliverySelectAllValue">Select All</label>
+    <label class="checkbox-inline pull-right" id="deliveryVideo">
+        <input type="checkbox" name="deliveryCheck" ng-model="video">Video</label>
+    <label class="checkbox-inline pull-right" id="deliveryCDemailPrint">
+        <input type="checkbox" name="deliveryCheck" ng-model="CD">CD</label>
+    <label class="checkbox-inline pull-right" id="deliveryCDemailPrint">
+        <input type="checkbox" name="deliveryCheck" ng-model="email">Email</label>
+    <label class="checkbox-inline pull-right" id="deliveryCDemailPrint">
+        <input type="checkbox" name="deliveryCheck" ng-model="print">Print</label>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6" id="orderCopies">
+      <label for="orderingAttorney">Ordering Attorney</label>
+      <select id="attorneyNameList" ng-model="orderingAttorney">
+              <option>Will Byers</option>
+              <option>Frank Hardy</option>
+              <option>Monty Burns</option>
+              <option>Darryl Philbin</option>
+              <option>Andy Bernard</option>
+              <option>Kelly Kapoor</option>
+              <option>Stan Brooks</option>
+              <option>Bob Jones</option>
+            </select>
+      <input type="text" id="orderingAttorney" class="pull-right form-control" placeholder="Enter New Name" ng-model="orderingAttorney">
+    </div>
+    <div class="form-group col-md-6" id="orderCopies">
+      <label for="numberCopies">Number of Copies</label>
+      <input type="number" id="numberCopies" class="pull-right form-control" ng-model="numberCopies">
+    </div>
+    <div class="form-group col-md-12" id="orderCopies">
+      <label for="specialInstruction">Special Instructions</label>
+      <select id="specialInstructionList" ng-model="specialInstruction">
+              <option>Standing Orders : </option>
+              <option>Do Not Send Zipfiles</option>
+              <option>Payment Due on Delivery</option>
+              <option>Email Copies to This Address : </option>
+            </select>
+      <textarea type="textarea" id="specialInstruction" class="pull-right form-control" placeholder="Enter Special Instructions"
+        ng-model="specialInstruction"></textarea>
+    </div>
+    <div class="col-md-6 well" id="confidentialTab">
+      <label for="titleconfidential" id="headerTab">Confidential</label>
+      <label class="radio-inline pull-right" id="confidentialNo">
+        <input type="radio" name="confidentialRadio" value="" ng-model="confidential">No</label>
+      <label class="radio-inline pull-right" id="confidentialYes">
+        <input type="radio" name="confidentialRadio" value="Confidential!" ng-model="confidential">Yes</label>
+    </div>
+  </div>
+  <button class="btn btn-success btn-lg pull-right" ng-click="addUser()">Submit</button>

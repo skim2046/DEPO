@@ -1,0 +1,91 @@
+body {
+  margin: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+#demoStyle {
+  font-size: 20px;
+  color: #FE0000;
+  font-weight: bold;
+}
+#header {
+  margin-bottom: 25px;
+  border-bottom: 1px #000 solid;
+}
+#companyHeader {
+  display: inline;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+}
+#navBar {
+  list-style-type: none;
+  float: right;
+  margin-top: 58px;
+}
+#navLink {
+  display: inline;
+  font-size: 24px;
+  margin: 10px;
+}
+#searchInput {
+  margin: 20px;
+}
+#searchBox {
+  margin-top: 40px;
+}
+a {
+  color: black;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  font-size: 16px;
+  margin: 5px;
+}
+#lawFirmList, #reporterNameList, #caseNameList, #attorneyNameList, #specialInstructionList {
+  margin-left: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+#speedTab, #timestampTab {
+  margin-top: 20px;
+}
+#formatTab, #deliveryTab {
+  margin-top: 20px;
+  margin-left: 38px;
+}
+#headerTab {
+  font-size: 14px;
+}
+#deliveryVideo, #timeNo, #formatIndex, #formatSelectAll, #speedNormal, #deliverySelectAll, #confidentialNo {
+  font-size: 16px;
+  margin-left: 10px;
+}
+#deliveryCDemailPrint, #timeYes, #formatFullCondensed, #speedRushEx, #confidentialYes {
+  font-size: 16px;
+}
+#orderCopies {
+  margin-top: 20px;
+}
+#specialIns {
+  font-size: 18px;
+  color: #D21404;
+  font-weight: bold;
+}
+#confidentialStyle {
+  color: #D21404;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+#confidentialTab {
+  background-color: rgba(255, 209, 209, .3);
+}
+#orderDetails {
+    background-color: rgba(246, 200, 57, .2);
+    margin-top: 10px;
+}
+#logo {
+  width: 100px;
+  margin-bottom: 45px;
+}

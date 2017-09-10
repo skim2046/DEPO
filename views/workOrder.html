@@ -1,0 +1,72 @@
+<div class="row">
+  <h1 class="text-center">Work Orders</h1>
+  <div class="orderInfo">
+    <div class="infoBox col-md-12 well" ng-repeat="user in users">
+      <h3 class="orderHeader">Order # : {{ user.userId }}</h3>
+      <h4 id="confidentialStyle">{{ user.confidential }}</h4>
+      <span id="specialIns" ng-if="user.specialInstruction">Special Instructions: {{ user.specialInstruction }}</span>
+      <ul>
+        <div class="well" id="orderDetails">
+          <div ng-if="confidential"></div>
+          <li>Order Details</li>
+          <ul>
+            <li ng-if="user.speed == 'Expedited'" style="color: #D21404; font-size: 18px;">Speed : {{ user.speed }}</li>
+            <li ng-if="user.speed != 'Expedited'">Speed : {{ user.speed }}</li>
+            <li>Format : <span ng-if="user.full">Full / </span> <span ng-if="user.condensed">  Condensed / </span><span ng-if="user.index">  Index  </span></li>
+            <li>Delivery Options : <span ng-if="user.print">Print / </span><span ng-if="user.email">  Email / </span><span ng-if="user.CD">  CD / </span><span
+                ng-if="user.video">  Video</span></li>
+            <li>Ordering Attorney : {{ user.orderingAttorney }}</li>
+            <li>Number of Copies : {{ user.numberCopies }}</li>
+            <li>Timestamped : {{ user.timeStamp }}</li>
+          </ul>
+        </div>
+        <div class="well">
+          <li>Court Reporter Name : {{ user.reporterName }}</li>
+          <ul>
+            <li>Certification Number : #{{ user.certNumber }}</li>
+          </ul>
+        </div>
+        <div class="well">
+          <li>Case Name : {{ user.caseName }}</li>
+          <ul>
+            <li>Deposition Location : {{ user.depoLocation }}</li>
+            <li>Deposition Date and Time : {{ user.depoDateTime | date: 'fullDate' }}</li>
+          </ul>
+        </div>
+        <div class="well">
+          <li>Law Firm Name : {{ user.firmName }}</li>
+          <ul>
+            <li>Address : {{ user.firmAddress }}</li>
+            <li>Phone : {{ user.firmPhone }}</li>
+            <li>Email : {{ user.firmEmail }}</li>
+          </ul>
+        </div>
+        <div class="well">
+          <li>Attorney's Name : {{ user.attorneyName }}</li>
+          <ul>
+            <li>Email : {{ user.attorneyEmail }}</li>
+            <li>Phone : {{ user.attorneyPhone }}</li>
+          </ul>
+        </div>
+      </ul>
+      <button type="button" class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#myModal">Edit</button>
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">ONLY AUTHORIZED USERS CAN EDIT</h4>
+            </div>
+            <div class="modal-body">
+              <p>ONLY AUTHORIZED USERS CAN EDIT. PLEASE CONTACT YOUR MANAGER.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
